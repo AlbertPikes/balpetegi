@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bal Peteği Bahçesi | Premium Karakovan Ürünleri</title>
+    
+    <!-- Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Navigasyon -->
+    <header class="navbar">
+        <a href="#" class="logo" onclick="showPage('home')">
+            <i class="fa-solid fa-hive"></i>
+            <span>BAL PETEĞİ BAHÇESİ</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#" onclick="showPage('home')">Ana Sayfa</a>
+            <a href="#" onclick="showPage('hakkimizda')">Hakkımızda</a>
+            <a href="#" onclick="showPage('urunlerPage')">Ürünlerimiz</a>
+            <a href="#iletisim" onclick="scrollToContact(event)">İletişim</a>
+        </nav>
+
+        <div class="cart-btn" id="cartBtn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge" id="cartBadge">0</span>
+        </div>
+    </header>
+
+    <!-- SAYFA 1 ANA SAYFA -->
+    <main id="page-home" class="page-content active">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="tag"><i class="fa-solid fa-award"></i> Özel Üretim & Sınırlı Hasat</span>
+                <h1>Sertifikalı Doğal Karakovan Balı</h1>
+                <p>100.000 dönümlük iklim kontrollü özel bahçelerimizde, tamamen doğal arı petekleriyle üretilen premium gurme lezzetler.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="showPage('urunlerPage')">Ürünleri İncele</button>
+                    <button class="btn btn-secondary" onclick="showPage('hakkimizda')">Tesisimiz Hakkında</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Öne Çıkan Ürünlerimiz</h2>
+                <div class="grid grid-3" id="homeProductList"></div>
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <button class="btn btn-secondary" onclick="showPage('urunlerPage')">Tüm Ürün Kataloğunu Gör</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SAYFA 2 HAKKIMIZDA -->
+    <main id="page-hakkimizda" class="page-content">
+        <section class="section page-header">
+            <div class="container">
+                <h1>Hakkımızda & Projemiz</h1>
+                <p>Bal Peteği Bahçesi'nin kuruluş hikayesi ve iklim kontrollü üretim tesisimiz.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-3">
+                    <div class="card info-card">
+                        <i class="fa-solid fa-temperature-low icon"></i>
+                        <h3>100.000 Dönüm İklim Tesisleri</h3>
+                        <p>Arılarımızın mevsimsel soğuk ve sıcak şartlarından etkilenmemesi için ısı ve nem dengesi özel olarak ayarlanan kapalı ve korumalı alanlarda üretim yapıyoruz.</p>
+                    </div>
+                    <div class="card info-card">
+                        <i class="fa-solid fa-seedling icon"></i>
+                        <h3>Kademeli Çiçek Döngüsü</h3>
+                        <p>Arazi içerisinde kademeli olarak dikilen doğal çiçekler sayesinde arılarımız yıl boyu beslenir ve tamamen kendi peteklerini örer.</p>
+                    </div>
+                    <div class="card info-card">
+                        <i class="fa-solid fa-vial-circle-check icon"></i>
+                        <h3>Laboratuvar Test Onayı</h3>
+                        <p>Ürünlerimiz satışa sunulmadan önce laboratuvar testlerine tabi tutulur. Onaylanan özel serilerimiz protokole hediye olarak sunulduktan sonra satışa açılır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SAYFA 3 TÜM ÜRÜNLER -->
+    <main id="page-urunlerPage" class="page-content">
+        <section class="section page-header">
+            <div class="container">
+                <h1>Ürün Kataloğumuz</h1>
+                <p>Kahramanmaraş Andırın tesislerimizde üretilen %100 doğal karakovan balı, polen ve arı sütü.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-3" id="fullProductList"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- İLETİŞİM-->
+    <section class="section bg-alt" id="iletisim">
+        <div class="container">
+            <h2 class="section-title">İletişim & Konum</h2>
+            <div class="grid grid-3 contact-grid">
+                <div class="card contact-card">
+                    <i class="fa-solid fa-location-dot icon"></i>
+                    <h3>Adresimiz</h3>
+                    <p>Bal Peteği Bahçesi Üretim Tesisleri<br>Andırın / Kahramanmaraş</p>
+                </div>
+                <div class="card contact-card">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <h3>E-Posta</h3>
+                    <p>Balpeteği46@gmail.com</p>
+                </div>
+                <div class="card contact-card">
+                    <i class="fa-solid fa-phone icon"></i>
+                    <h3>Telefon</h3>
+                    <p>+90 (344) 000 00 00<br>+90 (532) 000 00 00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yan Sepet Paneli -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Alışveriş Sepetim</h3>
+            <button class="close-btn" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam Tutar:</span>
+                <strong id="cartTotal">0 ₺</strong>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="openCheckoutModal()">Ödeme Adımına Geç</button>
+        </div>
+    </div>
+
+    <!-- ÖDEME PANELİ  -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-shield-halved"></i> Güvenli Ödeme Ekranı</h3>
+                <button class="close-btn" onclick="closeCheckoutModal()">&times;</button>
+            </div>
+
+            <!-- 3D  Kredi Kartı -->
+            <div class="card-container">
+                <div class="credit-card" id="creditCard">
+                    <!-- Ön Yüz -->
+                    <div class="card-front">
+                        <div class="card-chip"></div>
+                        <div class="card-logo" id="cardLogo"><i class="fa-brands fa-cc-visa"></i></div>
+                        <div class="card-number-display" id="cardNumDisplay">•••• •••• •••• ••••</div>
+                        <div class="card-details-display">
+                            <div>
+                                <span class="card-label">Kart Sahibi</span>
+                                <div id="cardHolderDisplay">AD SOYAD</div>
+                            </div>
+                            <div>
+                                <span class="card-label">SKT</span>
+                                <div id="cardExpDisplay">MM/YY</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arka Yüz -->
+                    <div class="card-back">
+                        <div class="card-stripe"></div>
+                        <div class="card-cvc-box">
+                            <span class="card-label">CVC / CVV</span>
+                            <div class="card-cvc-display" id="cardCvcDisplay">•••</div>
+                        </div>
+                        <div class="card-hologram"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="checkoutForm" onsubmit="handleCheckout(event)">
+                <div class="form-section-title"><i class="fa-solid fa-user"></i> Kişisel & Teslimat Bilgileri</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" id="inputHolder" required placeholder="Ahmet Yılmaz" oninput="updateCardDetails()">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" required placeholder="0555 000 00 00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Teslimat Adresi</label>
+                    <textarea required rows="2" placeholder="Siparişinizin teslim edileceği açık adres..."></textarea>
+                </div>
+
+                <div class="form-section-title"><i class="fa-solid fa-credit-card"></i> Kart Bilgileri</div>
+                <div class="form-group">
+                    <label>Kart Numarası</label>
+                    <input type="text" id="inputNumber" required placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumber(this); updateCardDetails();">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>SKT (Ay/Yıl)</label>
+                        <input type="text" id="inputExp" required placeholder="MM/YY" maxlength="5" oninput="formatExpDate(this); updateCardDetails();">
+                    </div>
+                    <div class="form-group">
+                        <label>CVC Kodu</label>
+                        <input type="text" id="inputCvc" required placeholder="123" maxlength="3" oninput="updateCardDetails()" onfocus="flipCard(true)" onblur="flipCard(false)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ödeme Seçeneği</label>
+                        <select class="form-control">
+                            <option value="1">Tek Çekim (Peşin)</option>
+                            <option value="3">3 Taksit (%0 Faiz)</option>
+                            <option value="6">6 Taksit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Teslimat Türü</label>
+                        <select class="form-control">
+                            <option value="std">Standart Kargo (Ücretsiz)</option>
+                            <option value="exp">Express Soğuk Zincir Kargo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order-summary-box">
+                    <div>
+                        <span class="summary-label">Toplam Ödenecek Tutar</span>
+                        <div class="summary-sub"><i class="fa-solid fa-lock"></i> 256-Bit SSL ile Korunmaktadır</div>
+                    </div>
+                    <strong id="modalTotalAmount">0 ₺</strong>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-check"></i> Ödemeyi Tamamla ve Siparişi Ver</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Bal Peteği Bahçesi. Kahramanmaraş / Andırın.</p>
+            <p>Doğal Karakovan Balı, Polen ve Arı Sütü Üretimi.</p>
+            <div class="developer-tag">Developed by Batuhan Demiröz</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
